@@ -32,3 +32,11 @@ The target is to Create a predictive model which is an attempt to predict the wi
 - **numGroups -** Number of groups we have data for in the match.
 - **maxPlace -** Worst placement we have data for in the match. This may not match with numGroups, as sometimes the data skips over placements.
 - **winPlacePerc -** The target of prediction. This is a percentile winning placement, where 1 corresponds to 1st place, and 0 corresponds to last place in the match. It is calculated off of maxPlace, not numGroups, so it is possible to have missing chunks in a match.
+
+plt.figure(figsize=(10, 6))
+plt.bar(model_list, r2_list, color='skyblue')
+plt.xlabel('Model')
+plt.ylabel('R2 Score')
+plt.title('Comparison of R2 Score for Different Models')
+plt.xticks(rotation=45)
+plt.show()
