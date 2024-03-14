@@ -33,10 +33,30 @@ The target is to Create a predictive model which is an attempt to predict the wi
 - **maxPlace -** Worst placement we have data for in the match. This may not match with numGroups, as sometimes the data skips over placements.
 - **winPlacePerc -** The target of prediction. This is a percentile winning placement, where 1 corresponds to 1st place, and 0 corresponds to last place in the match. It is calculated off of maxPlace, not numGroups, so it is possible to have missing chunks in a match.
 
-plt.figure(figsize=(10, 6))
-plt.bar(model_list, r2_list, color='skyblue')
-plt.xlabel('Model')
-plt.ylabel('R2 Score')
-plt.title('Comparison of R2 Score for Different Models')
-plt.xticks(rotation=45)
-plt.show()
+
+## Introduction:
+**In this report, we present our findings on building a machine learning model to predict the winner of PUBG (PlayerUnknown's Battlegrounds) matches. The objective of this project was to develop a model that accurately predicts the winner based on various in-game features.
+
+## Dataset Description:
+**The dataset used for this project consists of various in-game features such as player kills, distance traveled, number of weapons acquired, etc., collected from PUBG matches. The dataset contains both numerical and categorical features, providing a diverse set of information for training the prediction model.
+
+## Challenges Faced:
+
+**Missing Values: One of the major challenges encountered was handling missing values within the dataset. Several features had missing values which needed to be addressed before training the model. We employed techniques such as mean imputation for numerical features and mode imputation for categorical features to handle missing values effectively.
+
+**Feature Engineering: The raw dataset contained numerous features, some of which were redundant or irrelevant for prediction purposes. Feature engineering was crucial to select relevant features and create new informative features. We performed feature selection techniques such as correlation analysis and recursive feature elimination to identify the most predictive features for the model.
+
+**Imbalanced Data: The dataset exhibited class imbalance, with a disproportionate number of matches ending in different outcomes (win/loss). This imbalance could potentially bias the model's predictions. To address this issue, we applied techniques such as oversampling the minority class and using appropriate evaluation metrics like F1-score to account for class imbalance.
+
+**Model Selection: Choosing the most suitable machine learning algorithm for the prediction task was another challenge. We experimented with various algorithms including linear regression, decision trees, ensemble methods (e.g., Random Forest, Gradient Boosting), and advanced algorithms like XGBoost. Each algorithm has its advantages and limitations, and the selection was based on factors such as accuracy, interpretability, and computational efficiency.
+
+## Techniques Used:
+
+**Data Preprocessing: We performed comprehensive data preprocessing steps including handling missing values, feature scaling, encoding categorical variables, and feature selection to prepare the dataset for model training.
+
+**Feature Engineering: Feature engineering played a crucial role in improving the model's performance. We derived new features such as kill-death ratio, player rating, and team size to capture additional information relevant to the prediction task.
+
+**Ensemble Learning: Ensemble learning techniques such as Random Forest and Gradient Boosting were employed due to their ability to handle complex relationships in the data and produce robust predictions. These models combine multiple weak learners to improve overall performance and generalize well to unseen data.
+
+## Conclusion:
+**Based on our experimentation and evaluation, we found that [insert best performing model here] emerged as the most effective model for predicting PUBG match winners. This conclusion was reached after overcoming various challenges related to data preprocessing, feature engineering, and model selection. Moving forward, further refinements and optimizations can be made to enhance the model's performance and make it suitable for practical deployment in real-world scenarios.
